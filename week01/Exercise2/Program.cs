@@ -33,8 +33,33 @@ class Program
             gradeLetter = "F";
         }
 
-        Console.WriteLine($"Your grade is {gradeLetter}.");
+        ///variables and conditionals to add the sign as required in the stretch challenge.
+        string sign = "";
+        int lastDigit = percentage % 10;
 
+        if (lastDigit >= 7)
+        {
+            sign = "+";
+        }
+        else if (lastDigit <= 3)
+        {
+            sign = "-";
+        }
+        else
+        {
+            sign = "";
+        }
+
+        ///conditional to remove the sign and recognize the special situation in A and F, part of the stretch challenge.
+        if (percentage >= 95 || percentage < 60)
+        {
+            sign = "";
+        }
+
+
+        Console.WriteLine($"Your grade is {gradeLetter}{sign}.");
+
+        
         if (percentage >= 70)
         {
             Console.WriteLine("Congratulations, you passed!.");
