@@ -6,6 +6,7 @@ class Program
     {
         Console.WriteLine("Hello partners! This is the Exercise3 Project.");
 
+        Random randomGenerator = new Random();
         string playAgain;
 
         do
@@ -13,7 +14,6 @@ class Program
             ///additional line to separate responses and results and keep visual order.
             Console.WriteLine("______________________________________________");
             
-            Random randomGenerator = new Random();
             int number = randomGenerator.Next(1, 100);
             
             //int magicNumber;
