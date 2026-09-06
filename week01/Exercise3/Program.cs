@@ -14,7 +14,7 @@ class Program
             ///additional line to separate responses and results and keep visual order.
             Console.WriteLine("______________________________________________");
             
-            int number = randomGenerator.Next(1, 100);
+            int number = randomGenerator.Next(1, 101);
             
             //int magicNumber;
             int guess = 0;
