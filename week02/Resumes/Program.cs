@@ -8,23 +8,23 @@ class Program
         
         Console.Write("");
 
-        Job jobOne = new Job();
-        jobOne._jobTitle = "Software Engineer";
-        jobOne._company = "Microsoft";
-        jobOne._startYear = 2019;
-        jobOne._endYear = 2022;
+        Job job1 = new Job();
+        job1._jobTitle = "Software Engineer";
+        job1._company = "Microsoft";
+        job1._startYear = 2019;
+        job1._endYear = 2022;
 
-        Job jobTwo = new Job();
-        jobTwo._jobTitle = "Manager";
-        jobTwo._company = "Apple";
-        jobTwo._startYear = 2022;
-        jobTwo._endYear = 2023;
+        Job job2 = new Job();
+        job2._jobTitle = "Manager";
+        job2._company = "Apple";
+        job2._startYear = 2022;
+        job2._endYear = 2023;
 
         Resume theResume = new Resume();
         theResume._name = "Allison Rose";
 
-        theResume._jobs.Add(jobOne);
-        theResume._jobs.Add(jobTwo);
+        theResume._jobs.Add(job1);
+        theResume._jobs.Add(job2);
 
         theResume.Display();
     }
