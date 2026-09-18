@@ -124,4 +124,12 @@ class Program
             }
         }
     }
+/*
+  EXCEEDING REQUIREMENTS FEATURES:
+  1. JSON save format file.
+  2. Prompt Rotation: Users can type '0' while writing to swap the current prompt for a new random one.
+  3. Overwrite Safety Lock: Checks if a file exists before saving and asks for confirmation (y/n) to prevent data loss.
+  4. Unsaved Changes check on Exit: Detects unsaved entries upon selecting 'Quit' and offers a chance to return to the menu.
+  5. Unnecessary save prevention: Validates whether new entries exist before running the save logic to avoid unnecessary disk writes.
+*/
 }
