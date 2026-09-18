@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Program
 {
@@ -9,7 +10,9 @@ class Program
 
         Journal myJournal = new Journal();
         PromptGenerator promptGen = new PromptGenerator();
+
         bool running = true;
+        bool hasUnsavedChanges = false;
 
         while (running)
         {
@@ -58,7 +61,8 @@ class Program
                     string date = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
                     Entry newEntry = new Entry(date, prompt, response);
                     myJournal.AddEntry(newEntry);
-                    Console.WriteLine("Entry successfully saved.\n");
+                    hasUnsavedChanges = true;
+                    Console.WriteLine("The entry has been successfully recorded.\n");
                     break;
 
                 case "2":
@@ -69,15 +73,48 @@ class Program
                     Console.Write("What is the name of the file? ");
                     string loadFile = Console.ReadLine();
                     myJournal.LoadFromFile(loadFile);
+
+                    hasUnsavedChanges = false;
                     break;
 
                 case "4":
+                    if (!hasUnsavedChanges || myJournal._entries.Count == 0)
+                    {
+                        Console.WriteLine("There is nothing to save at the moment.\n");
+                        break;
+                    }
+
                     Console.Write("What is the name of the file? ");
                     string saveFile = Console.ReadLine();
+
+                    if (File.Exists(saveFile))
+                    {
+                        Console.Write($"The file '{saveFile}' already exists. Do you want to overwrite it? (y/n): ");
+                        string answer = Console.ReadLine().ToLower();
+
+                        if (answer != "y")
+                        {
+                            Console.WriteLine("Save operation canceled. Your entries remains safely in memory-");
+                            break;
+                        }
+                    }
                     myJournal.SaveToFile(saveFile);
+                    hasUnsavedChanges = false;
                     break;
 
                 case "5":
+                    if (hasUnsavedChanges && myJournal._entries.Count > 0)
+                    {
+                        Console.Write("There are unsaved entries in memory. Do you want to exit without saving? (y/n): ");
+                        string exitAnswer = Console.ReadLine().ToLower();
+
+                        if (exitAnswer == "n")
+                        {
+                            Console.WriteLine("Returning to the main menu...\n");
+                            Console.WriteLine();
+                            break;
+                        }
+                    }
                     running = false;
                     break;
 

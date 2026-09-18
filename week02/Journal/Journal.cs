@@ -18,7 +18,7 @@ public class Journal
             Console.WriteLine("The Log is currently empty.\n");
             return;
         }
-        Console.WriteLine("\n--- Blog Posts ---");
+        Console.WriteLine("\n--- Log Entries ---");
         foreach (Entry entry in _entries)
         {
             entry.Display();
@@ -26,19 +26,11 @@ public class Journal
     }
     public void SaveToFile(string file)
     {
-        /*  using (StreamWriter writer = new StreamWriter(file))
-            {
-                foreach (Entry entry in _entries)
-                {
-                    // the ~|~ delimiter was selected to avoid conflicts with commas or semicolons.
-                    writer.WriteLine($"{entry._date}~|~{entry._promptText}~|~{entry._entryText}");
-                }
-            }
-            Console.WriteLine($"Log successfully saved in '{file}'.\n"); 
-        */
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true
+        };
 
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        
         string jsonString = JsonSerializer.Serialize(_entries, options);
 
         File.WriteAllText(file, jsonString);
@@ -56,22 +48,8 @@ public class Journal
 
         string jsonString = File.ReadAllText(file);
 
-        _entries = JsonSerializer.Deserialize<List<Entry>>(jsonString);
+        _entries = JsonSerializer.Deserialize<List<Entry>>(jsonString) ?? new List<Entry>();
 
-        /*
-        _entries.Clear();
-        string[] lines = File.ReadAllLines(file);
-
-        foreach (string line in lines)
-        {
-            string[] parts = line.Split("~|~");
-            if (parts.Length == 3)
-            {
-                Entry entry = new Entry(parts[0], parts[1], parts[2]);
-                _entries.Add(entry);
-            }
-        }
-        */
         Console.WriteLine($"Log successfully uploaded from '{file}'.\n");
     }
 }
