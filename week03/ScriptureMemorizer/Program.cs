@@ -14,7 +14,7 @@ class Program
             // 2 Nephi 31:20
             new Scripture(new Reference("2 Nephi", 31, 20), "Wherefore, ye must press forward with a steadfastness in Christ, having a perfect brightness of hope, and a love of God and of all men. Wherefore, if ye shall press forward, feasting upon the word of Christ, and endure to the end, behold, thus saith the Father: Ye shall have eternal life."),
             
-            // Doctrine and Covenants 4:2-4 (KJV)
+            // Doctrine and Covenants 4:2-4
             new Scripture(new Reference("Doctrine and Covenants", 4, 2, 4), "Therefore, O ye that embark in the service of God, see that ye serve him with all your heart, might, mind and strength, that ye may stand blameless before God at the last day. Therefore, if ye have desires to serve God ye are called to the work; for behold the field is white already to harvest; and lo, he that thrusteth in his sickle with his might, the same layeth up in store that he perisheth not, but bringeth salvation to his soul.")
         };
 
