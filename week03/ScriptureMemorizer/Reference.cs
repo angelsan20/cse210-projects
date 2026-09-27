@@ -5,16 +5,14 @@ public class Reference
     private int _verse;
     private int _endVerse;
 
-    // Constructor para un solo versículo (ej. "John 3:16")
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
         _chapter = chapter;
         _verse = verse;
-        _endVerse = verse; // El versículo final es el mismo
+        _endVerse = verse;
     }
 
-    // Constructor para un rango de versículos (ej. "Proverbs 3:5-6")
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
         _book = book;

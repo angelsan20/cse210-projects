@@ -28,7 +28,7 @@ public class Word
     {
         if (_isHidden)
         {
-            return new string('_', _text.Length); // Reemplaza cada letra con '_'
+            return new string('_', _text.Length);
         }
         else
         {

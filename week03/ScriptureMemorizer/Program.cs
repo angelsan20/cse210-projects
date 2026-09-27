@@ -11,7 +11,7 @@ class Program
             // Proverbs 3:5-6 (KJV)
             new Scripture(new Reference("Proverbs", 3, 5, 6), "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."),
             
-            // 2 Nephi 31:20 (KJV)
+            // 2 Nephi 31:20
             new Scripture(new Reference("2 Nephi", 31, 20), "Wherefore, ye must press forward with a steadfastness in Christ, having a perfect brightness of hope, and a love of God and of all men. Wherefore, if ye shall press forward, feasting upon the word of Christ, and endure to the end, behold, thus saith the Father: Ye shall have eternal life."),
             
             // Doctrine and Covenants 4:2-4 (KJV)

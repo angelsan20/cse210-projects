@@ -19,7 +19,6 @@ public class Scripture
 
     public void HideRandomWords(int numberToHide)
     {
-        // Lógica para ocultar palabras al azar (puedes mejorarla para evitar las que ya están ocultas)
         Random random = new Random();
         int hiddenCount = 0;
 
