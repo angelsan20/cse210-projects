@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello again CSE210! This is my Scripture Memorizer.");
-        
+
         List<Scripture> scriptures = new List<Scripture>()
         {
             // Proverbs 3:5-6 (KJV)
@@ -41,7 +41,7 @@ class Program
                 Console.WriteLine(scripture.GetDisplayText());
                 Console.WriteLine("\nCongratulations! You've learned a new scripture.");
                 Console.WriteLine("Press Enter to load a new random script, or type 'quit' to exit:");
-                
+
                 userInput = Console.ReadLine().Trim().ToLower();
                 if (userInput == "quit") break;
 
@@ -53,7 +53,7 @@ class Program
             Console.WriteLine(scripture.GetDisplayText());
             Console.WriteLine();
             Console.WriteLine("Press [Enter] to hide more words, type “next” to change the text, or “quit” to exit:");
-            
+
             userInput = Console.ReadLine().Trim().ToLower();
 
             if (userInput == "quit")
@@ -62,7 +62,7 @@ class Program
             }
             else if (userInput == "next")
             {
-            
+
                 scripture = scriptures[randomScripture.Next(scriptures.Count)];
             }
             else if (userInput == "")
@@ -74,4 +74,16 @@ class Program
         Console.Clear();
         Console.WriteLine("\nThank you for using our Scripture Memorizer! Come back soon and learn more scriptures.");
     }
+
+
+    // EXCEEDING CORE REQUIREMENTS: 
+    //The program not only works with a randomized library of multiple scriptures 
+    //from the Bible, The Book of Mormon and Doctrine and Covenants, 
+    //but also features a dynamic navigation system. 
+    //Users can type 'next' at any time during execution to instantly switch 
+    //to a different random scripture if they find the current one too long 
+    //or difficult, without having to restart the program, 
+    //Now, when a scripture is completely hidden, the program allows the user 
+    //to choose whether to move on to another randomly selected passage from the list 
+    //or exit the program.
 }
