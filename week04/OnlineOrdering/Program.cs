@@ -8,7 +8,7 @@ class Program
         Console.WriteLine("");
 
         Console.WriteLine("Online Ordering System - W04 Assignment");
-        Console.WriteLine(new string('=', 50));
+        Console.WriteLine(new string('=', 40));
         Console.WriteLine();
 
         // Order 1: National Client 
@@ -45,7 +45,7 @@ class Program
             Console.WriteLine();
 
             Console.WriteLine($"TOTAL PRICE: ${order.GetTotalCost():0.00}");
-            Console.WriteLine(new string('=', 50));
+            Console.WriteLine(new string('=', 40));
             Console.WriteLine();
 
             orderNumber++;
