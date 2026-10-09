@@ -1,0 +1,7 @@
+6550|True,Angel,Santafé,M
+SimpleGoal|Do excercise tomorrow morning|I will do excercise tomorrow for 30 minutes, simple excercises without equipment.|10|True
+EternalGoal|Read scriptures every day|I'll read for 15 minutes every day the scriptures|10
+EternalGoal|p1|proof|50
+EternalGoal|p2|proof|100
+EternalGoal|p3|proof|500
+EternalGoal|p4|proof|-50
