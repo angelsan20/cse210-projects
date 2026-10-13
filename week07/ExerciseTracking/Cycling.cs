@@ -1,6 +1,6 @@
 public class Cycling : Activity
 {
-    private double _speed; // in kph
+    private double _speed;
 
     public Cycling(string date, int minutes, double speed) : base(date, minutes)
     {

@@ -19,19 +19,17 @@ public abstract class Activity
         return _minutes;
     }
 
-    public abstract double GetDistance(); // in kilometers
-    public abstract double GetSpeed();    // in kph
-    public abstract double GetPace();     // in min per km
+    public abstract double GetDistance();
+    public abstract double GetSpeed();
+    public abstract double GetPace();
 
     protected abstract string GetActivityName();
 
-    // Virtual method to allow specific activities (like Swimming) to append extra details
     public virtual string GetExtraDetails()
     {
         return string.Empty;
     }
-
-    // GetSummary remains in the base class (satisfies rubric criteria for virtual methods)
+    
     public string GetSummary()
     {
         Console.WriteLine("Summary of Activities:");
